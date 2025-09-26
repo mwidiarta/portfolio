@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --color-primary: oklch(71.5% 0.143 215.221);
+  --color-dark: oklch(12.9% 0.042 264.695);
+  --color-secondary: oklch(55.4% 0.046 257.417);
+}
+
+.navbar-fixed {
+  @apply fixed z-[999] bg-white/80 backdrop-blur-xs shadow-md;
+}
+
+.hamburger-line {
+  @apply w-[18px] h-[2px] my-1 block bg-dark;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
