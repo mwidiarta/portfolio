@@ -8,12 +8,14 @@
   --color-secondary: oklch(55.4% 0.046 257.417);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .navbar-fixed {
-  @apply fixed z-[999] bg-white/80 backdrop-blur-xs shadow-md;
+  @apply dark:bg-dark/80 fixed z-[999] bg-white/80 shadow-md backdrop-blur-md;
 }
 
 .hamburger-line {
-  @apply w-[18px] h-[2px] my-1 block bg-dark;
+  @apply bg-dark my-1 block h-[2px] w-[18px] dark:bg-white;
 }
 
 .hamburger-active > span:nth-child(1) {
@@ -24,4 +26,8 @@
 }
 .hamburger-active > span:nth-child(2) {
   @apply scale-0;
+}
+
+#dark-toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-3;
 }
